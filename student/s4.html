@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style_s4.css">
 </head>
 <body>
-    
+    <h1>
+        Course Overview
+    </h1>
+
+    <section class="available-courses">
+        <div class="course" data-course="GMCI">
+            GMCI
+        </div>
+        <div class="course" data-course="Prog1">
+            Prog1
+        </div>
+    </section>
+
+    <section class="course-actions hidden" id="actions">
+        <p>Selected Course <strong id="selected-course"></strong></p>
+
+        <button onclick="goToSurveyOverview()">Survey Overview</button>
+        <button onclick="goToCourse()">Go to</button>
+    </section>
+
+<script src="js_s4.js"></script>    
 </body>
 </html>
