@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback System</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      letter-spacing: 3px;
+    }
+
+    .container {
+      display: flex;
+      height: 80vh;
+      border: 2px solid black;
+    }
+
+    /* LEFT PANEL */
+    .left-panel {
+      width: 40%;
+      border-right: 2px solid black;
+      padding: 15px;
+    }
+
+    .course-list {
+      max-height: 100%;
+      overflow-y: auto; /* SCROLL BAR */
+    }
+
+    .course {
+      border: 1px solid black;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .course:hover {
+      background-color: #f2f2f2;
+    }
+
+    .course.inactive {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .status.active {
+      color: green;
+    }
+
+    .status.inactive {
+      color: red;
+    }
+
+    /* RIGHT PANEL */
+    .right-panel {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup {
+      border: 2px solid black;
+      padding: 30px;
+      width: 70%;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>FEEDBACK SYSTEM</h1>
+
+  <div class="container">
+
+    <div class="left-panel">
+      <h3>Select your desired course</h3>
+
+      <div class="course-list">
+
+        <div class="course" onclick="selectCourse('Grundlagen Mensch-Computer Interaktion')">
+          <strong>Grundlagen Mensch-Computer Interaktion</strong><br>
+          Datum: 01.10.2025<br>
+          <span class="status active">AKTIV</span>
+        </div>
+
+        <div class="course" onclick="selectCourse('Programmieren I')">
+          <strong>Programmieren I</strong><br>
+          Datum: 01.10.2025<br>
+          <span class="status active">AKTIV</span>
+        </div>
+
+        <div class="course inactive">
+          <strong>Programmieren II</strong><br>
+          Datum: 01.10.2025<br>
+          <span class="status inactive">NICHT AKTIV</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="popup">
+        <p id="popup-text">
+          What would you like to do with<br>
+          <strong>Grundlagen Mensch-Computer Interaktion</strong>
+        </p>
+
+        <button>Go to overview of all surveys</button>
+        <button class="primary">Create a survey for this course</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function selectCourse(courseName) {
+      document.getElementById("popup-text").innerHTML =
+        `What would you like to do with<br><strong>${courseName}</strong>`;
+    }
+  </script>
+
+</body>
+</html>
