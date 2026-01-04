@@ -8,15 +8,18 @@
 
 .course {
     padding: 20px;
-    border: 2px solid #ccc;
     cursor: pointer;
-     background-color: #3b82f6;   
-    color: white;      
+    background-color: skyblue;   
+    color: black;      
+}
+
+.course:hover {
+    background-color: white;
 }
 
 .course.selected {
-    border-color: #2aa198;
-    background-color: #eef6f6;
+    border: 2px solid black;
+    background-color: skyblue;
 }
 
 .course-actions {
