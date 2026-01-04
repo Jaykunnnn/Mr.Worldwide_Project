@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI Survey</title>
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .page-container {
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            padding: 40px;
+            min-height: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            margin-bottom: 80px;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .btn-join {
+            background-color: rgb(85, 204, 255);
+            color: black;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-join:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <div class="greeting">
+            Hallo Max,
+        </div>
+
+        <div class="content">
+            <h1>Survey for 01-Grundlagen der<br>Mensch-Computer-Interaktion</h1>
+            <a href="s2.html" class="btn-join">Join Survey</a>
+        </div>
+    </div>
+
+</body>
+</html>
