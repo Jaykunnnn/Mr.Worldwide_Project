@@ -1,0 +1,17 @@
+.title {
+	color: #5C6AC4;
+}
+div {
+  width: 300px;
+  border: 5px solid grey;
+  padding: 10px;
+  margin: 5px;
+}
+.info {
+  width: 450px ;
+  border: 5px solid blue;
+}
+flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
