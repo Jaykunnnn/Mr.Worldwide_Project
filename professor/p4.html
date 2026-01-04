@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>P4</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 60px;
+        }
+
+        .section {
+            margin-top: 80px;
+        }
+
+        .section h2 {
+            margin-bottom: 40px;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .survey-box {
+            width: 220px;
+            height: 140px;
+            border: 4px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            background-color: white;
+        }
+
+        .survey-box:hover {
+            background-color: lightgreen;
+        }
+
+        
+        .menu-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 3px solid black;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Survey Overview</h1>
+
+    <!-- ONGOING -->
+    <div class="section">
+        <h2>Ongoing:</h2>
+
+        <div class="box-container">
+            <div class="survey-box" onclick="goToP5()">Survey</div>
+            <div class="survey-box" onclick="goToP5()">Survey</div>
+        </div>
+    </div>
+
+    <!-- COMPLETED -->
+    <div class="section">
+        <h2>Completed:</h2>
+
+        <div class="box-container">
+            <div class="survey-box" onclick="goToP5()">Survey</div>
+            <div class="survey-box" onclick="goToP5()">Survey</div>
+        </div>
+    </div>
+
+    <!-- MENU BUTTON -->
+    <button class="menu-button" onclick="goToP1()">Menu</button>
+
+    <script>
+        function goToP5() {
+            window.location.href = "p5.html";
+        }
+
+        function goToP1() {
+            window.location.href = "p1.html";
+        }
+    </script>
+
+</body>
+</html>
