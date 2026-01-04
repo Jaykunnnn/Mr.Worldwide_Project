@@ -19,12 +19,12 @@ courses.forEach(course => {
 
 function goToSurveyOverview() {
     if (selectedCourse) {
-        window.location.href = "survey-overview.html";
+        window.location.href = "s5.html";
     }
 }
 
 function goToCourse() {
     if (selectedCourse) {
-        window.location.href = "index.html";
+        window.location.href = "s6.html";
     }
 }
