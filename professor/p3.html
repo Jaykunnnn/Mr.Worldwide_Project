@@ -74,6 +74,18 @@
             border: 3px solid black;
             background-color: lightgreen;
         }
+		
+		.back-button {
+            position:fixed;
+            bottom: 30px;
+            left:30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 3px solid black;
+            background-color: lightgreen;
+        }
+		
     </style>
 </head>
 
@@ -124,6 +136,8 @@
 
     <!-- NEXT BUTTON-->
     <button class="next-button" onclick="goToP4()">Create Survey</button>
+	<!-- Back button-->
+	<button class="back-button" onclick="goToP2()">Back</button>
 
     <script>
         function toggleDropdown(id) {
@@ -192,6 +206,9 @@
         function goToP4() {
             window.location.href = "p4.html";
         }
+		function goToP2(){
+		window.location.href = "p2.html";
+		}
     </script>
 
 </body>
