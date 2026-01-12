@@ -72,7 +72,7 @@
             font-size: 18px;
             cursor: pointer;
             border: 2px solid black;
-            background-color: light-gray;
+            background-color: lightgray;
         }
 		
 		.back-button {
@@ -83,23 +83,29 @@
             font-size: 18px;
             cursor: pointer;
             border: 2px solid black;
-            background-color: light-gray;
+            background-color: lightgray;
+        }
+		.menu-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+        .back-button:hover,
+		.next-button:hover,
+        .menu-button:hover {
+            background-color: skyblue;
         }
         
-        button:hover {
+        .button:hover {
           background-color: skyblue;
         }
 
-		.menu-button {
-			position: absolute;
-			bottom: 30px;
-			left:30px;
-			padding: 16px 26px;
-			font-size: 18px;
-			cursor: pointer;
-			border: 2px solid black;
-			background-color: light-gray;
-		}
+		
 		
     </style>
 </head>
@@ -150,9 +156,9 @@
     </div>
 
 	  		<!-- Menu Button -->
-		<button class="menu-button" onclick="goToP2()">Menu</button>
+		<button class="menu-button" onclick="goToP1()">Menu</button>
 				<!-- Back Button -->
-		<button class="back-button" onclick="goToP3()">Back</button>
+		<button class="back-button" onclick="goToP2()">Back</button>
 	    <!-- NEXT BUTTON-->
 	    <button class="next-button" onclick="goToP4()">Create Survey</button>
 
@@ -228,6 +234,9 @@
         }
 		function goToP2(){
 		window.location.href = "p2.html";
+		}
+		function goToP1(){
+		window.location.href = "p1.html";
 		}
     </script>
 
