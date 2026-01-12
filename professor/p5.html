@@ -37,6 +37,22 @@
         .menu-button:hover {
             background-color: skyblue;
         }
+		
+		.delete-button {
+		    position: fixed;
+			top: 30px;
+			right: 30px;
+			padding: 16px 26px;
+			font-size: 18px;
+			cursor: pointer;
+			border: 2px solid black;
+			background-color:lightgray;
+			
+		}
+		.delete-button:hover {
+		    background-color: skyblue;
+		}
+		
         /* Survey selection */
         .section.vertical {
             margin-top: 30px;
@@ -162,6 +178,7 @@
     <!-- NAV BUTTONS -->
     <button class="back-button" onclick="goToP4()">Back</button>
     <button class="menu-button" onclick="goToP1()">Menu</button>
+	<button class="delete-button" onclick="goToP4()">delete</button>
 
     <script>
     function goToP4() {
