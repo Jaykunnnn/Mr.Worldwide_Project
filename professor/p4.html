@@ -7,6 +7,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: white;
         }
 
         h1 {
@@ -38,10 +39,14 @@
             font-weight: bold;
             cursor: pointer;
             user-select: none;
-            background-color: white;
+            background-color: light-gray;
         }
 
         .survey-box:hover {
+            background-color: skyblue;
+        }
+
+        button:hover {
             background-color: skyblue;
         }
 
@@ -49,12 +54,23 @@
         .menu-button {
             position: fixed;
             bottom: 30px;
+            left: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: light-gray;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 30px;
             right: 30px;
             padding: 16px 26px;
             font-size: 18px;
             cursor: pointer;
-            border: 3px solid black;
-            background-color: skyblue;
+            border: 2px solid black;
+            background-color: light-gray;
         }
     </style>
 </head>
@@ -85,10 +101,15 @@
 
     <!-- MENU BUTTON -->
     <button class="menu-button" onclick="goToP1()">Menu</button>
+    <button class="back-button" onclick="goToP3()">Back</button>
 
     <script>
         function goToP5() {
             window.location.href = "p5.html";
+        }
+
+        function goToP3() {
+            window.location.href = "p3.html";
         }
 
         function goToP1() {
