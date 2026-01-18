@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Help</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Buttons */
+        
+
+        .menu-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+        
+        .menu-button:hover {
+            background-color: skyblue;
+        }
+
+        .center {
+            max-width: 100%;
+        }
+		
+		
+
+  
+}
+
+    </style>
+
+    
+</head>
+
+<body>
+
+    <h1 class="title">Help</h1>
+    <h2 class = "Text">This is the Helper Page.<br><br>
+	
+	If you want to create a new Survey:<br><br>
+	Select course on the leftside of the menu, after that the course name is visible in the middle of the screen<br>
+	Now click on "Create a survey for this course", choose your question set and click next, on the next Page select a timeslot.<br>
+    After clicking on "Create Survey" you will find the survey overview. Here you can find your ongoing and completed surveys.<br>
+	Choosing what survey by selecting it, this will lead you to the specific survey, here you can compare to other survey or decide to delete the survey.<br><br>
+	
+	If you want to view ongoing or already completed survey:<br><br>
+	Select course on the left side and choose overview of all courses.<br>
+    Here you can find your ongoing and completed surveys.<br>
+	Choosing what survey by selecting it, this will lead you to the specific survey, here you can compare to other survey or decide to delete the survey.<br>	
+	
+	</h2>
+
+    <!-- NAV BUTTONS -->
+    <button class="menu-button" onclick="goToP1()">Menu</button>
+    <script>
+
+    function goToP1() {
+        window.location.href = "p1.html";
+    }
+
+    </script>
+
+</body>
+</html>

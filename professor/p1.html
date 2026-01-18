@@ -71,7 +71,7 @@
     }
 
     button {
-      width: 100%;
+      width: 98.5%;
       padding: 10px;
       margin-top: 15px;
       cursor: pointer;
@@ -100,6 +100,22 @@
 	.popup button:hover{
 	background-color: rgb(135, 206, 235);
 	}
+	
+	.help-button {
+            position: fixed; !important
+            bottom: 30px; !important
+            left: 30px; !important
+            padding: 16px 26px; !important
+            font-size: 18px; !important
+            cursor: pointer; !important
+            border: 2px solid black; !important
+            background-color: lightgray; !important
+        }
+        
+        .help-button:hover {
+            background-color: skyblue;
+        }
+	
 	
   </style>
 </head>
@@ -158,8 +174,11 @@
     </div>
 
   </div>
-
+    <button class="help-button" onclick="goToHelp()">Help</button>
   <script>
+  function goToHelp() {
+        window.location.href = "help.html";
+    }
     function selectCourse(courseName) {
       document.getElementById("popup-text").innerHTML =
         `What would you like to do with<br><strong>${courseName}</strong>`;
