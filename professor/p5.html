@@ -178,7 +178,7 @@
     <!-- NAV BUTTONS -->
     <button class="back-button" onclick="goToP4()">Back</button>
     <button class="menu-button" onclick="goToP1()">Menu</button>
-	<button class="delete-button" onclick="goToP4()">delete</button>
+	<button class="delete-button" onclick="goToP4delete()">delete</button>
 
     <script>
     function goToP4() {
@@ -188,6 +188,9 @@
     function goToP1() {
         window.location.href = "p1.html";
     }
+	function goToP4delete(){
+	window.location.href = "p4delete.html";
+	}
 
     function toggleDropdown(id) {
         document.querySelectorAll('.dropdown').forEach(d => {
