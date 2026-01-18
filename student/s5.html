@@ -1,85 +1,237 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="style_s5.css" />
-  </head>
-  <body onload="openCity(event, 'GMCI Lecture 1')" onload="myFunction()">
-    <div class="info">
-      <h2>Grundlagen der Mensch-Computer-Interaktion: </h2>
-    </div>
-     <div class="tab">
-      <h3 class="info2">Select a survey below:</h3>
-      <input class ="searchbox" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-        <button class="tablinks" onclick="openCity(event, 'GMCI Lecture 1')">GMCI Lecture 1</button></li>
-        <button class="tablinks" onclick="openCity(event, 'GMCI Lecture 2')">GMCI Lecture 2</button>
-        <button class="tablinks" onclick="openCity(event, 'GMCI Exercise 1')">GMCI Exercise 1</button>
-        <button class="tablinks" onclick="openCity(event, 'GMCI Exercise 2')">GMCI Exercise 2</button>
-        <button class="tablinks" onclick="openCity(event, 'GMCI Homework 1')">GMCI Homework 1</button>
-        <button class="tablinks" onclick="openCity(event, 'GMCI Homework 2')">GMCI Homework 2</button>
-    </div>
-    
-    <div id="GMCI Lecture 1" class="tabcontent">
-      <h3>Survey for GMCI Lecture 1</h3>
-      <p>Started on 24.11.2025 08:00</p>
-      <p>Ends on 24.11.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <div id="GMCI Lecture 2" class="tabcontent">
-      <h3>Survey for GMCI Lecture 2</h3>
-      <p>Started on 29.11.2025 08:30</p>
-      <p>Ends on 29.11.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <div id="GMCI Exercise 1" class="tabcontent">
-      <h3>Survey for GMCI Exercise 1</h3>
-      <p>Started on 25.11.2025 10:30</p>
-      <p>Ends on 25.11.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <div id="GMCI Exercise 2" class="tabcontent">
-      <h3>Survey for GMCI Exercise 2</h3>
-      <p>Started on 30.11.2025 10:30</p>
-      <p>Ends on 30.11.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <div id="GMCI Homework 1" class="tabcontent">
-      <h3>Survey for GMCI Homework 1</h3>
-      <p>Started on 31.11.2025 08:00</p>
-      <p>Ends on 31.09.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <div id="GMCI Homework 2" class="tabcontent">
-      <h3>Survey for GMCI Homework 2</h3>
-      <p>Started on 06.11.2025 08:00</p>
-      <p>Ends on 06.11.2025 23:59</p>
-      <div>
-        <a href="s4.html">Go to Courses</a>
-        <a href="s6.html">Show Overview</a>
-      </div>
-    </div>
-    
-    <script src="script_s5.js"></script>
-  </body>
+<head>
+  <title>Survey Selection</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* LEFT: survey selection buttons */
+    .tab {
+      flex: 1;
+      border: 2px solid black;
+      background-color: lightgray;
+      padding: 20px;
+      height: fit-content;
+    }
+
+    .tab h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .searchbox {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid black;
+      font-size: 16px;
+    }
+
+    .tablinks {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid black;
+      background-color: lightgray;
+      text-align: left;
+    }
+
+    .tablinks:hover,
+    .tablinks.active {
+      background-color: skyblue;
+    }
+
+    /* RIGHT: selected survey content */
+    .tabcontent {
+      flex: 2;
+      display: none;
+      border: 2px solid black;
+      background-color: lightgray;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .tabcontent h3 {
+      margin-top: 0;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .actions a {
+      padding: 10px 20px;
+      border: 2px solid black;
+      background-color: lightgray;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    .actions a:hover {
+      background-color: skyblue;
+    }
+	
+	.help-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+        
+        .help-button:hover {
+            background-color: skyblue;
+        }
+		
+		
+  </style>
+</head>
+
+<body onload="openTab('GMCI Lecture 1')">
+
+  <h2>Grundlagen der Mensch-Computer-Interaktion</h2>
+
+  <div class="container">
+
+    <!-- LEFT: Survey selection -->
+    <div class="tab">
+      <h3>Select a survey:</h3>
+      <input
+        class="searchbox"
+        type="text"
+        id="searchInput"
+        onkeyup="filterTabs()"
+        placeholder="Search..."
+      >
+
+      <button class="tablinks" onclick="openTab('GMCI Lecture 1')">GMCI Lecture 1</button>
+      <button class="tablinks" onclick="openTab('GMCI Lecture 2')">GMCI Lecture 2</button>
+      <button class="tablinks" onclick="openTab('GMCI Exercise 1')">GMCI Exercise 1</button>
+      <button class="tablinks" onclick="openTab('GMCI Exercise 2')">GMCI Exercise 2</button>
+      <button class="tablinks" onclick="openTab('GMCI Homework 1')">GMCI Homework 1</button>
+      <button class="tablinks" onclick="openTab('GMCI Homework 2')">GMCI Homework 2</button>
+    </div>
+
+    <!-- RIGHT: Selected survey content -->
+    <div id="surveyContent">
+      <div id="GMCI Lecture 1" class="tabcontent">
+        <h3>Survey for GMCI Lecture 1</h3>
+        <p>Started on 24.11.2025 08:00</p>
+        <p>Ends on 24.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+
+      <div id="GMCI Lecture 2" class="tabcontent">
+        <h3>Survey for GMCI Lecture 2</h3>
+        <p>Started on 29.11.2025 08:30</p>
+        <p>Ends on 29.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+
+      <div id="GMCI Exercise 1" class="tabcontent">
+        <h3>Survey for GMCI Exercise 1</h3>
+        <p>Started on 25.11.2025 10:30</p>
+        <p>Ends on 25.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+
+      <div id="GMCI Exercise 2" class="tabcontent">
+        <h3>Survey for GMCI Exercise 2</h3>
+        <p>Started on 30.11.2025 10:30</p>
+        <p>Ends on 30.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+
+      <div id="GMCI Homework 1" class="tabcontent">
+        <h3>Survey for GMCI Homework 1</h3>
+        <p>Started on 31.11.2025 08:00</p>
+        <p>Ends on 31.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+
+      <div id="GMCI Homework 2" class="tabcontent">
+        <h3>Survey for GMCI Homework 2</h3>
+        <p>Started on 06.11.2025 08:00</p>
+        <p>Ends on 06.11.2025 23:59</p>
+        <div class="actions">
+          <a href="s4.html">Go to Courses</a>
+          <a href="s6.html">Show Overview</a>
+        </div>
+      </div>
+    </div>
+	<button class="help-button" onclick="goTohelp()">Help</button>
+
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      const contents = document.querySelectorAll(".tabcontent");
+      const links = document.querySelectorAll(".tablinks");
+
+      contents.forEach(c => c.style.display = "none");
+      links.forEach(l => l.classList.remove("active"));
+
+      document.getElementById(tabId).style.display = "block";
+
+      [...links].find(btn => btn.textContent === tabId)
+        ?.classList.add("active");
+    }
+
+    function filterTabs() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const buttons = document.querySelectorAll(".tablinks");
+
+      buttons.forEach(btn => {
+        btn.style.display = btn.textContent.toLowerCase().includes(input)
+          ? "block"
+          : "none";
+      });
+    }
+	
+	function goTohelp() {
+        window.location.href = "help.html";
+    }
+  </script>
+
+</body>
 </html>

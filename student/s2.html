@@ -1,87 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_s2.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+    }
+
+    .page-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .course-title {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .course-name {
+      font-weight: bold;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    .question {
+      border: 2px solid black;
+      background-color: lightgray;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .question-label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .options-inline {
+      display: flex;
+      gap: 30px;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid black;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .bottom-bar {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 16px 26px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 2px solid black;
+      background-color: lightgray;
+    }
+
+    button:hover {
+      background-color: skyblue;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="page-container">
-        <h1>
-            Participation until: 14:00, 09.10.2025
-        </h1>
+
+  <div class="page-container">
+    <h1>Participation until: 14:00, 09.10.2025</h1>
 
     <div class="course-title">
-        Course: <span class="course-name">
-            GMCI
-        </span>
+      Course: <span class="course-name">GMCI</span>
     </div>
 
     <form id="surveyForm">
-        <div class="question">
-            <span class="question-label">
-                1. Good visual clarity
-            </span>
-            <div class="options-inline">
-                <label>
-                    <input type="radio" name="visual_clarity" value="yes" required>
-                    Yes
-                </label>
-                <label>
-                     <input type="radio" name="visual_clarity" value="no">
-                    No
-                </label>
-            </div>
+
+      <div class="question">
+        <span class="question-label">1. Good visual clarity</span>
+        <div class="options-inline">
+          <label>
+            <input type="radio" name="visual_clarity" value="yes" required> Yes
+          </label>
+          <label>
+            <input type="radio" name="visual_clarity" value="no"> No
+          </label>
         </div>
+      </div>
 
-        <div class="question">
-            <label class="question-label" for="understanding">
-                2. Understanding (1 = not clear, 5 = very clear)
-            </label>
-            <select name="understanding" id="understanding" required>
-                <option value="">
-                    Please choose 
-                </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
+      <div class="question">
+        <label class="question-label" for="understanding">
+          2. Understanding (1 = not clear, 5 = very clear)
+        </label>
+        <select name="understanding" id="understanding" required>
+          <option value="">Please choose</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
 
-        <!-- Add more questions if needed -->
+      <div class="question">
+        <label class="question-label" for="feedback">
+          Individual feedback
+        </label>
+        <textarea name="feedback" id="feedback" placeholder="Individual feedback..."></textarea>
+      </div>
 
-        <div class="question">
-            <label class="question-label" for="feedback">
-                Individual feedback
-            </label>
-            <textarea name="feedback" id="feedback" placeholder="Individual feedback: "></textarea>
-
-        </div>
-
-        <div class="bottom-bar">
-            <button type="button" class="btn-next" id="nextButton">
-                Next
-            </button>
-        </div>
-
+      <div class="bottom-bar">
+        <button type="button" id="nextButton">Next</button>
+      </div>
 
     </form>
-   </div>
+  </div>
 
-   <script>
-        document.getElementById('nextButton').addEventListener('click', function(){
-            const form = document.getElementById('surveyForm');
-            if(!form.checkValidity()){
-                form.reportValidity();
-                return;
-            }
-
-            window.location.href = 's3.html';
-        });
-   </script>
+  <script>
+    document.getElementById('nextButton').addEventListener('click', function () {
+      const form = document.getElementById('surveyForm');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      window.location.href = 's3.html';
+    });
+  </script>
 
 </body>
 </html>

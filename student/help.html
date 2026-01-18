@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Help</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Buttons */
+        
+
+        .menu-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+        
+        .menu-button:hover {
+            background-color: skyblue;
+        }
+
+        .center {
+            max-width: 100%;
+        }
+		
+		
+
+  
+}
+
+    </style>
+
+    
+</head>
+
+<body>
+
+    <h1 class="title">Help</h1>
+    <h2 class = "Text">This is the Helper Page.<br><br>
+	Click on "Go to Courses" to go to the overview and select your desired course.<br>
+	On the left side you can choose what specific survey you want to see. If you want to see what you have choosen click on show Overview.<br>
+	
+		
+	
+	</h2>
+
+    <!-- NAV BUTTONS -->
+    <button class="menu-button" onclick="goToS5()">Menu</button>
+    <script>
+
+    function goToS5() {
+        window.location.href = "s5.html";
+    }
+
+    </script>
+
+</body>
+</html>

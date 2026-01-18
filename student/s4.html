@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style_s4.css">
+    <title>s3</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .course-button {
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+
+        .course-button:hover {
+            background-color: skyblue;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>
-        Course Overview
-    </h1>
 
-    <section class="available-courses">
-        <div class="course" data-course="GMCI">
-            GMCI
-        </div>
-        <div class="course" data-course="Prog1">
-            Prog1
-        </div>
-    </section>
+    <h1>Course Overview</h1>
 
-    <section class="course-actions hidden" id="actions">
-        <p>Selected Course <strong id="selected-course"></strong></p>
+    <div class="button-container">
+        <button class="course-button" onclick="goToS5()">GMCI</button>
+        <button class="course-button" onclick="goToS5()">Prog</button>
+    </div>
 
-        <button onclick="goToSurveyOverview()">Survey Overview</button>
-        <button onclick="goToCourse()">Go to</button>
-    </section>
+    <script>
+        function goToS5() {
+            window.location.href = "s5.html";
+        }
+    </script>
 
-<script src="js_s4.js"></script>    
 </body>
 </html>
