@@ -40,11 +40,24 @@
       text-decoration: none;
       color: black;
       display: inline-block;
+      animation: blink 4s infinite; 
+    }
+	
+	.btn-join:hover {
+      background-color: skyblue; 
     }
 
-    .btn-join:hover {
-      background-color: skyblue;
+    /* Keyframes for blinking skyblue */
+    @keyframes blink {
+      0%, 50%, 100% {
+        background-color: lightgray;
+      }
+      25%, 75% {
+        background-color: skyblue;
+      }
     }
+
+    
   </style>
 </head>
 
