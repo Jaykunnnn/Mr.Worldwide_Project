@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>P4/Deletesucessful</title>
+    <title>P4/delete</title>
 
     <style>
         body {
@@ -26,6 +26,7 @@
             display: flex;
             justify-content: center;
             gap: 60px;
+            flex-wrap: wrap;
         }
 
         .survey-box {
@@ -50,7 +51,6 @@
             background-color: skyblue;
         }
 
-        
         .menu-button {
             position: fixed;
             bottom: 30px;
@@ -61,8 +61,6 @@
             border: 2px solid black;
             background-color: lightgray;
         }
-
-        
     </style>
 </head>
 
@@ -75,8 +73,10 @@
         <h2>Ongoing:</h2>
 
         <div class="box-container">
-            <div class="survey-box" onclick="goToP5()">Survey</div>
-            <div class="survey-box" onclick="goToP5()">Survey</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 4</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 4</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 3</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 3</div>
         </div>
     </div>
 
@@ -85,25 +85,20 @@
         <h2>Completed:</h2>
 
         <div class="box-container">
-            <div class="survey-box" onclick="goToP5()">Survey</div>
-            <div class="survey-box" onclick="goToP5()">Survey</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 1</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 1</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 2</div>
+            <div class="survey-box" onclick="goToP5()">Survey Week 2</div>
         </div>
-		<div> 
-		<h3>Delete Sucessful </h3>
-		</div>
+		<h3>Delete Sucessful</h3>
     </div>
 
     <!-- MENU BUTTON -->
     <button class="menu-button" onclick="goToP1()">Menu</button>
-    
 
     <script>
         function goToP5() {
             window.location.href = "p5.html";
-        }
-
-        function goToP3() {
-            window.location.href = "p3.html";
         }
 
         function goToP1() {
