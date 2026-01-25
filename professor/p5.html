@@ -33,26 +33,27 @@
             border: 2px solid black;
             background-color: lightgray;
         }
+
         .back-button:hover,
         .menu-button:hover {
             background-color: skyblue;
         }
-		
-		.delete-button {
-		    position: fixed;
-			top: 30px;
-			right: 30px;
-			padding: 16px 26px;
-			font-size: 18px;
-			cursor: pointer;
-			border: 2px solid black;
-			background-color:lightgray;
-			
-		}
-		.delete-button:hover {
-		    background-color: skyblue;
-		}
-		
+
+        .delete-button {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding: 16px 26px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+
+        .delete-button:hover {
+            background-color: skyblue;
+        }
+
         /* Survey selection */
         .section.vertical {
             margin-top: 30px;
@@ -118,32 +119,17 @@
         .center {
             max-width: 100%;
         }
-		
-		
 
-        .flex-container,
-	
-        .section.vertical {
-            background: none !important;
-            border: none !important;
+        .flex-container img {
+            border: 2px solid black;
+            background: transparent;
         }
-		
-	    .flex-container img {
-            border: 2px solid black !important;
-            outline: none !important;
-            box-shadow: none !important;
-            background: transparent !important;
-}
-
     </style>
-
-    <link rel="stylesheet" href="style_p5.css" />
 </head>
 
 <body>
 
     <h1 class="title">Statistics</h1>
-
     <h2>Select Surveys to Compare</h2>
 
     <!-- SURVEY SELECTORS -->
@@ -168,10 +154,10 @@
     <!-- GRAPHS -->
     <div class="flex-container">
         <div>
-            <img src="p5_graph1.png" alt="Graph 1" class="center">
+            <img id="graphA" src="p5_graph_placeholder.png" alt="Graph 1" class="center">
         </div>
         <div>
-            <img src="p5_graph2.png" alt="Graph 2" class="center">
+            <img id="graphB" src="p5_graph_placeholder.png" alt="Graph 2" class="center">
         </div>
     </div>
 
@@ -181,67 +167,78 @@
     <button class="delete-button" onclick="confirmDelete()">delete</button>
 
     <script>
-	
-	const params = new URLSearchParams(window.location.search);
-    const selectedSurvey = params.get("survey");
+        const params = new URLSearchParams(window.location.search);
+        const selectedSurvey = params.get("survey");
 
-    if (selectedSurvey) {
-    document.getElementById("surveyAValue").textContent = selectedSurvey;
-    }
-    function goToP4() {
-        window.location.href = "p4.html";
-    }
+        if (selectedSurvey) {
+            document.getElementById("surveyAValue").textContent = selectedSurvey;
+        }
 
-    function goToP1() {
-        window.location.href = "p1.html";
-    }
-	function goToP4delete(){
-	window.location.href = "p4delete.html";
-	}
-	
-	function confirmDelete() {
-    const answer = confirm("Do you want to delete this Survey?");
-    if (answer) {
-        window.location.href = "p4delete.html";
-    }
-}
+        function goToP4() {
+            window.location.href = "p4.html";
+        }
 
-    function toggleDropdown(id) {
-        document.querySelectorAll('.dropdown').forEach(d => {
-            if (d.id !== id) d.style.display = "none";
+        function goToP1() {
+            window.location.href = "p1.html";
+        }
+
+        function confirmDelete() {
+            const answer = confirm("Do you want to delete this Survey?");
+            if (answer) {
+                window.location.href = "p4delete.html";
+            }
+        }
+
+        function toggleDropdown(id) {
+            document.querySelectorAll('.dropdown').forEach(d => {
+                if (d.id !== id) d.style.display = "none";
+            });
+
+            const dropdown = document.getElementById(id);
+            dropdown.style.display =
+                dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        <!--Graph selection-->
+        const surveyGraphs = {
+              "Prog1 – Variant 1": "prog1_graph.png",
+              "Prog1 – Variant 2": "prog1_graph2.png",
+              "GMCI – Variant 1": "gmci_graph.png",
+              "GMCI – Variant 2": "gmci_graph2.png"
+              
+         };
+
+       function selectSurvey(type, value) {
+                document.getElementById(type + "Value").textContent = value;
+                document.getElementById(type + "Dropdown").style.display = "none";
+
+                const graphId = type === "surveyA" ? "graphA" : "graphB";
+
+                if (surveyGraphs[value]) {
+                    document.getElementById(graphId).src = surveyGraphs[value];
+                }
+        }
+        
+
+        // Survey list
+        const surveys = [
+              "Prog1 – Variant 1",
+              "Prog1 – Variant 2",
+              "GMCI – Variant 1",
+              "GMCI – Variant 2"
+        ];
+
+        surveys.forEach(survey => {
+            const divA = document.createElement("div");
+            divA.textContent = survey;
+            divA.onclick = () => selectSurvey("surveyA", survey);
+            surveyADropdown.appendChild(divA);
+
+            const divB = document.createElement("div");
+            divB.textContent = survey;
+            divB.onclick = () => selectSurvey("surveyB", survey);
+            surveyBDropdown.appendChild(divB);
         });
-
-        const dropdown = document.getElementById(id);
-        dropdown.style.display =
-            dropdown.style.display === "block" ? "none" : "block";
-    }
-
-    function selectSurvey(type, value) {
-        document.getElementById(type + "Value").textContent = value;
-        document.getElementById(type + "Dropdown").style.display = "none";
-    }
-
-    // Survey list
-    const surveys = [
-        "Prog1",
-        "GMCI",
-        "GMCI",
-        "Prog1"
-    ];
-
-    surveys.forEach(survey => {
-        // Survey 1
-        const divA = document.createElement("div");
-        divA.textContent = survey;
-        divA.onclick = () => selectSurvey("surveyA", survey);
-        surveyADropdown.appendChild(divA);
-
-        // Survey 2
-        const divB = document.createElement("div");
-        divB.textContent = survey;
-        divB.onclick = () => selectSurvey("surveyB", survey);
-        surveyBDropdown.appendChild(divB);
-    });
     </script>
 
 </body>
