@@ -178,9 +178,16 @@
     <!-- NAV BUTTONS -->
     <button class="back-button" onclick="goToP4()">Back</button>
     <button class="menu-button" onclick="goToP1()">Menu</button>
-	<button class="delete-button" onclick="goToP4delete()">delete</button>
+    <button class="delete-button" onclick="confirmDelete()">delete</button>
 
     <script>
+	
+	const params = new URLSearchParams(window.location.search);
+    const selectedSurvey = params.get("survey");
+
+    if (selectedSurvey) {
+    document.getElementById("surveyAValue").textContent = selectedSurvey;
+    }
     function goToP4() {
         window.location.href = "p4.html";
     }
@@ -191,6 +198,13 @@
 	function goToP4delete(){
 	window.location.href = "p4delete.html";
 	}
+	
+	function confirmDelete() {
+    const answer = confirm("Do you want to delete this Survey?");
+    if (answer) {
+        window.location.href = "p4delete.html";
+    }
+}
 
     function toggleDropdown(id) {
         document.querySelectorAll('.dropdown').forEach(d => {
